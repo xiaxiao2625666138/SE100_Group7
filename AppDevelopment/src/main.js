@@ -12,6 +12,7 @@ FastClick.attach(document.body);
 
 //css
 import './assets/css/reset.css'
+import 'css/iconfont.css'
 
 /* eslint-disable no-new */
 new Vue({
