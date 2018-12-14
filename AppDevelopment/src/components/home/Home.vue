@@ -30,6 +30,7 @@ export default{
     background-image: url("~@/assets/img/homebg.jpg");
     background-repeat:no-repeat;
     background-size:31rem,100%;
+    background-position:center;
     -moz-background-size:100% 100%;
 }
 

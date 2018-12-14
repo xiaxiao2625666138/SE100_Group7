@@ -1,18 +1,25 @@
 <template>
     <div class="body">
         <div class="look-for">
-            <input class="input"  type="text" placeholder="搜索    "/>
-            <span class="iconfont">&#xe602;</span>
+            <input class="input"  type="text" placeholder="搜索"
+            :class="{input_content:input}"
+            @mouseover="input=true" @mouseout="input=false"/>
+            <span class="iconfont" :class="{find:find}"
+            @mouseover="find=true" @mouseout="find=false">&#xe602;</span>
         </div> 
         <div class="content">
-            一站式学习网站
         </div>
     </div>
 </template>
 
 <script>
 export default{
-
+    data(){
+        return{
+            find:false,
+            input:false,
+        }
+    }
 }
 </script>
 
@@ -45,17 +52,17 @@ export default{
 .input{
     background:#222;
     padding-left:0.3rem;
-    border:#ffffef 1px solid;
+    border:#ddd 1px solid;
     border-radius:.4rem;
     text-align:right;
     color:#ffffff;
     height:.6rem;
-    width:6rem;
+    width:5.7rem;
     float:left;
+    padding-right:.3rem;
 }
 
 .content{
-    
     color:#444;
     text-align:center;
     padding-top:1rem;
@@ -63,5 +70,11 @@ export default{
     font-family:YouYuan;
 }
 
+.input_content{
+    border-bottom:#ffffff 3px solid;
+}
 
+.find{
+    color:#fff;
+}
 </style>
