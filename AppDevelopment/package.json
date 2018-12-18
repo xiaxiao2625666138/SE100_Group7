@@ -10,6 +10,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "d3": "^5.7.0",
+=======
+    "element-ui": "^2.4.11",
+>>>>>>> 3a15d3951a6e8c6516bb455c994549ed49122c8a
     "fastclick": "^1.0.6",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
