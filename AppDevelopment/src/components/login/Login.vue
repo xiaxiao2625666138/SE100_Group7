@@ -1,56 +1,53 @@
 
 <template>
 
-<!--背景图-->
-
-
-
-<div class = "note" :style = "note">
-
-<!--login框，表单+tab标签页的组合-->
-
-<div class = "loginFrame">
-
-    <el-form ref = "AccountForm" :model = "account"   rules = "rules" label-position = "left" label-width = "0px" class = "demo-ruleForm login-container">
-
-       <!--tab标签-->
-
-    <el-tabs v-model = "activeName" @tab-click = "handleClick" class = "users">
-
-        <el-tab-pane label = "学生" name = "students">学生</el-tab-pane>
-
-        <el-tab-pane label = "管理员" name = "controler">管理员</el-tab-pane>
-
-    </el-tabs>
-
- 
-
-<el-form-item prop = "username">
-
-    <el-input type = "text" v-model = "account_username" auto-complete = "off" placeholder = "请输入您的账号"></el-input></el-form-item> 
-
-<el-form-item prop = "password">
-
-    <el-input type = "password" v-model = "account_password" auto-complete = "off" placeholder = "请输入密码"></el-input></el-form-item>
-
-<el-checkbox v-model = "checked" checked class = "remember">记住密码</el-checkbox>
-
-  
-
-<el-form-item style = "width:100%;">
-
-    <el-button type = "primary" style = "width:100%;" >登录</el-button>
-
-</el-form-item>
-
-    </el-form>
-
+    <div>
+        <div class="login-header">
+            <div class="header-right">
+            <router-link to='/'>
+                返回首页
+            </router-link>
+            </div>
+        </div>
+        <!--背景图-->
+        <div class = "note" :style = "note">
+            <!--login框，表单+tab标签页的组合-->
+            <div class = "loginFrame">
+                <el-form ref = "AccountForm" 
+                :model = "account"
+                rules = "rules"
+                label-position = "left"
+                label-width = "0px"
+                class = "demo-ruleForm login-container">
+                <!--tab标签-->
+                    <el-tabs v-model = "activeName" @tab-click = "handleClick" class = "users">
+                        <el-tab-pane label = "学生" name = "students">学生</el-tab-pane>
+                        <el-tab-pane label = "管理员" name = "controler">管理员</el-tab-pane>
+                    </el-tabs>
+                <el-form-item prop = "username">
+                    <el-input type = "text"
+                    v-model = "account_username"
+                    auto-complete = "off"
+                    placeholder = "请输入您的账号"></el-input>
+                    </el-form-item> 
+                <el-form-item prop = "password">
+                    <el-input type = "password"
+                    v-model = "account_password"
+                    auto-complete = "off"
+                    placeholder = "请输入密码"></el-input>
+                </el-form-item>
+                <el-checkbox v-model = "checked"
+                checked class = "remember">记住密码</el-checkbox>    
+                <el-form-item style = "width:100%;">
+                    <router-link to="/">
+                        <el-button type = "primary"
+                        style = "width:100%;" >登录</el-button>
+                    </router-link>
+                </el-form-item>
+            </el-form>
+            </div>
+        </div>
     </div>
-
-    </div>
-
- 
-
 </template>
 
  
@@ -58,9 +55,7 @@
 <script>
 
 export default {
-
-    name: '登录',
-
+    name: 'login',
     data() {
 
         return {
@@ -84,11 +79,6 @@ export default {
                 backgroundSize: "100% 100%",
 
                 backgroundRepeat: "no-repeat",
-
-                
-
-            
-
             },
 
             account : {
@@ -120,22 +110,14 @@ export default {
             },
 
             checked: false
-
-           
-
-        };
-
-        
-
+        }
     }
-
-}</script>
-
- 
-
-<style>
+}
+</script>
 
  
+
+<style scoped>
 
 .login-container {
 
@@ -165,4 +147,37 @@ export default {
 
    
 
-}</style>
+}
+.el-tab-pane{
+    font-size: .32rem;
+    line-height: .32rem;
+    color:#cac6c6;
+    margin-bottom: .15rem;
+}
+.login-header{
+  position: relative;
+  z-index: 2;
+  width:100%;
+  height: 2rem;
+  padding: 0 1rem;
+}
+.header-right{ 
+  position: relative;
+  right: 1.4rem;
+  margin-top: .6rem;
+  float: right;
+}
+.header-right a{
+  text-align: center;
+  width: 1.8rem;
+  height: .8rem;
+  font-size: .36rem;
+  color: #fff;
+  line-height: .8rem;
+  margin-left: .4rem;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  background-color: transparent;
+  float: left;
+}
+</style>

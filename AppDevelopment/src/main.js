@@ -5,13 +5,14 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
 //js
 import FastClick from 'fastclick'
 FastClick.attach(document.body);
-
+import store from './store/index.js'
 //css
 import './assets/css/reset.css'
 import 'css/iconfont.css'
@@ -20,6 +21,7 @@ import 'css/iconfont.css'
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
