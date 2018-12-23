@@ -1,12 +1,20 @@
 <template>
     <div class="header">
         <div class="header-left">
+            <router-link to ="/">
             <span :class="{choose:choose1}" 
             @mouseover="choose1=true" @mouseout="choose1=false">首页</span>
+            </router-link>
+            <router-link to = "/user">
             <span :class="{choose:choose2}" 
             @mouseover="choose2=true" @mouseout="choose2=false">我的课程</span>
+            </router-link>
             <span :class="{choose:choose3}" 
             @mouseover="choose3=true" @mouseout="choose3=false">定制教程</span>
+            <router-link to = '/QA'>
+            <span :class="{choose:choose7}" 
+            @mouseover="choose7=true" @mouseout="choose7=false">问答区</span>
+            </router-link>
             <span :class="{choose:choose4}" 
             @mouseover="choose4=true" @mouseout="choose4=false">消息</span>
         </div>
@@ -33,6 +41,7 @@ export default{
             "choose4":false,
             "choose5":false,
             "choose6":false,
+            "choose7":false
         }
     },
 }
@@ -55,10 +64,9 @@ export default{
     font-family:"Arial", "Hiragino Sans GB", 微软雅黑, "Helvetica", "sans-serif";
 }
 
-.header-right{
-}
 
 .header span{
+    color: #ddd;
     height:1.3rem;
     line-height:1.3rem;
     font-size: .4rem;
