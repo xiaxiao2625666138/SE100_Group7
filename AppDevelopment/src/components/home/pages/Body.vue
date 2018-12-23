@@ -117,11 +117,13 @@ export default{
 <style scoped>
 
 .body{
-    height: 8rem;
+    height: 8.4rem;
     background:#000;
-    opacity:0.5;
-    padding-top: 5rem;
+    opacity:0.7;
+    padding-top: 4rem;
     overflow:hidden;
+    outline:1px solid #000;
+    font-family:"Arial", "Hiragino Sans GB", 微软雅黑, "Helvetica", "sans-serif";
 }
 
 .look-for{
@@ -143,7 +145,7 @@ export default{
 .input{
     background:#222;
     padding-left:0.3rem;
-    border:#ddd 1px solid;
+    border:#888 1px solid;
     border-radius:.4rem;
     text-align:right;
     color:#ffffff;
@@ -159,7 +161,6 @@ export default{
     float: top;
     margin-top: -1px;
     z-index: 989;
-    cursor: pointer;
     background: #000;
 }
 .tips div{
@@ -181,18 +182,21 @@ export default{
     max-height: none;
     padding: 0;   
 }
-.tips-item:hover{
-    background:#444;
+
+.tips-info:hover{
+    border-bottom:1px solid #fff; 
+    cursor: pointer;
 }
+
 .tips-item .tips-container{
     padding: 0px;
     margin: 0 20px;
     display: flex;
-    border-bottom:1px solid #fff; 
 }
+
 .tips-item .tips-info{
-    color: #fff;
-    font-size: 16px;
+    color: #888;
+    font-size: .32rem;
     padding-right: 8px;
     align-items: center;
     word-break: break-all; 
@@ -207,7 +211,7 @@ export default{
 }
 
 .input_content{
-    border-bottom:#ffffff 3px solid;
+    border-bottom:#fff 3px solid;
 }
 
 .find{

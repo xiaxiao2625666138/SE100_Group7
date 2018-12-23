@@ -1,8 +1,11 @@
 <template>
     <div class="home">
-    <home-header />
-    <home-body />
-    <home-tailer />
+        <div v-if="islogin">
+            <home-login @login="login"/>
+        </div>
+        <home-header @login="login"/>
+        <home-body />
+        <home-tailer />
     </div>
 </template>
 
@@ -10,17 +13,28 @@
 import HomeHeader from './pages/Header'
 import HomeBody from './pages/Body'
 import HomeTailer from './pages/Tailer'
+import HomeLogin from './pages/Login'
 
 export default{
+    data(){
+        return{
+            islogin:false
+        }
+    },
     components:{
         HomeHeader,
         HomeBody,
         HomeTailer,
+        HomeLogin,
+    },
+    methods:{
+        login:function(){
+            this.islogin=!this.islogin;
+        }
     }
 }
 
 </script>
-
 <style scoped>
 
 .home{
@@ -33,6 +47,5 @@ export default{
     background-position:center;
     -moz-background-size:100% 100%;
 }
-
 
 </style>

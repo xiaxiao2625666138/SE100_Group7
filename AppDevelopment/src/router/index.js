@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home/Home'
-import Login from '@/components/login/Login'
 import User from '@/components/user/User'
 import Question from '@/components/question/Question'
+import Message from '@/components/message/Message'
 Vue.use(Router)
 
 export default new Router({
@@ -14,11 +14,6 @@ export default new Router({
       component: Home
     },
     {
-      path:'/login',
-      name:'Login',
-      component: Login
-    },
-    {
       path:'/user',
       name:'User',
       component: User
@@ -27,6 +22,11 @@ export default new Router({
       path: '/QA',
       name: 'Question',
       component: Question
+    },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message
     }
   ]
 })

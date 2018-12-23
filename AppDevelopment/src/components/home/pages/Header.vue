@@ -1,5 +1,8 @@
 <template>
     <div class="header">
+        <div class="logo">
+        <img src="~@/assets/img/logo.jpg"/>
+        </div>
         <div class="header-left">
             <router-link to ="/">
             <span :class="{choose:choose1}" 
@@ -15,18 +18,19 @@
             <span :class="{choose:choose7}" 
             @mouseover="choose7=true" @mouseout="choose7=false">问答区</span>
             </router-link>
+            <router-link to = 'Message'>
             <span :class="{choose:choose4}" 
-            @mouseover="choose4=true" @mouseout="choose4=false">消息</span>
+            @mouseover="choose4=true" @mouseout="choose4=false">消息(0)</span>
+            </router-link>
         </div>
         <div class="header-right">
             <span class="iconfont save" 
             :class="{choose:choose5}" 
             @mouseover="choose5=true" @mouseout="choose5=false">&#xe635;</span>
-            <router-link to="login">
-                <span class="iconfont login" 
-                :class="{choose:choose6}" 
-                @mouseover="choose6=true" @mouseout="choose6=false">&#xe600;</span>
-            </router-link>
+            <span class="iconfont login" 
+            :class="{choose:choose6}" 
+            @click="login"
+            @mouseover="choose6=true" @mouseout="choose6=false">&#xe600;</span>
         </div>
     </div>
 </template>
@@ -44,6 +48,11 @@ export default{
             "choose7":false
         }
     },
+    methods:{
+        login:function(){
+            this.$emit("login")
+        }
+    }
 }
 </script>
 
@@ -53,14 +62,27 @@ export default{
     width:100%;
     color:#ddd;
     background-color:#000000;
-    opacity:0.85;
-    height: 1.3rem;
     overflow:hidden;
+    opacity:0.95;
+    height: 1.3rem;
+    outline:1px solid #000;
+}
+
+.logo{
+    float:left;
+    height:1.3rem;
+    padding: .2rem .6rem;
+}
+.logo img{
+    border-radius:.2rem;
+    width:1.3rem;
+    line-height: 1.3rem;
 }
 
 .header-left{
+    height: 1.3rem;
     float:left;
-    margin-left:1rem;
+    margin-left:.2rem;
     font-family:"Arial", "Hiragino Sans GB", 微软雅黑, "Helvetica", "sans-serif";
 }
 
@@ -68,6 +90,7 @@ export default{
 .header span{
     color: #ddd;
     height:1.3rem;
+    overflow:hidden;
     line-height:1.3rem;
     font-size: .4rem;
     cursor: pointer;

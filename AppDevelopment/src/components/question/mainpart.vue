@@ -220,7 +220,6 @@ export default {
   width: 20rem;
   display: flex;
   flex: 1;
-
 }
 .main-container{
   height: 100%;

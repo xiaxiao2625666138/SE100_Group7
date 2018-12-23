@@ -26,7 +26,7 @@ export default{
 
 .tailer{
     background:#000000;
-    opacity:0.85;
+    opacity:0.95;
     height:2.2rem;
     color: #fff;
     text-align:center;
