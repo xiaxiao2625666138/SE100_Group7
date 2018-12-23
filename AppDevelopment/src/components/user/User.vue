@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="user">
         <user-header></user-header>
         <user-content></user-content>
     </div>
